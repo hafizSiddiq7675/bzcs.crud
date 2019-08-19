@@ -1,9 +1,9 @@
-
+<?php require_once 'private/initialize.php' ?>
 <!doctype html>
 <html lang="en">
 
 <?php include('private/shared/header.php') ?>
-  <body></body>
+  <body>
 
     <header>
       <!-- Fixed navbar -->
