@@ -1,4 +1,12 @@
-<?php require_once 'private/initialize.php' ?>
+<?php require_once 'private/initialize.php';
+$user_id = $_SESSION['user_id'];
+$sql     = "SELECT * from users where id = " .$user_id;
+$result  = $conn->query($sql);
+    if($result->num_rows > 0)
+    {
+      $user = $result->fetch_assoc();
+    }
+?>
 <!doctype html>
 <html lang="en">
 

@@ -9,7 +9,15 @@ require_once 'site/private/initialize.php';
 /**
  * include or require script just once
  */
-header('Location: site/');
+if(isset($_SESSION['user_id']))
+{
+    header('Location: site/');
+}
+else
+{
+    session_destroy();
+    header('Location: front-end/');
+}
 /**
  * Simple finance solution for each user
  * Front end website
