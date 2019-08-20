@@ -5,7 +5,7 @@ $password   = "";
 $dbname     = "easy_finance_db";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
+$conn = new mysqli($servername, $username, $password,$dbname);
 
 // Check connection
 if ($conn->connect_error) {

@@ -12,4 +12,5 @@
 
     <!-- Custom styles for this template -->
     <link href="<?php echo BASE_URL ?>/_css/sticky-footer-navbar.css" rel="stylesheet">
+    <link href="<?php echo BASE_URL ?>/_css/sign.css" rel="stylesheet">
   </head>
