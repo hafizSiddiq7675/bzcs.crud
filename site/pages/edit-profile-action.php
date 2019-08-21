@@ -30,7 +30,7 @@ if($password != $confirmPassword)
 
 if(count($errors) > 0) 
 {
-    $_SESSION['errors'] = $errors;
+    $_SESSION['errors-editProfile'] = $errors;
     header('Location: '. BASE_URL . "/pages/edit-profile.php");
 }
 else
@@ -40,14 +40,14 @@ else
     if($conn->query($sql) === TRUE)
     {
         $_SESSION['user_id'] = $id;
-        $base_url = BASE_URL;
-        $base_url = str_replace('site','',$base_url);
+        $base_url            = BASE_URL;
+        $base_url            = str_replace('site','',$base_url);
         header('Location: '. $base_url);
     }
     else
     {
-        $errors['update'] = $conn->error;
-        $_SESSION['errors'] = $errors;
+        $errors['update']               = $conn->error;
+        $_SESSION['errors-editProfile'] = $errors;
         header('Location: '. BASE_URL . "/pages/edit-profile.php");
     }
 }

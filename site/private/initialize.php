@@ -20,6 +20,10 @@ const SHARED_PATH = PRIVATE_PATH . '/site/private/shared';
  * Use same document root as web server
  * Can dynamically find everything in URL up to "/site"
  */
+function h($str = ""): string
+{
+    return htmlspecialchars($str);
+}
 $site_end = strpos($_SERVER['SCRIPT_NAME'], '/site') + 5;
 $doc_root = substr($_SERVER['SCRIPT_NAME'], 0, $site_end);
 define("WWW_ROOT", $doc_root);

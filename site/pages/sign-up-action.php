@@ -38,7 +38,7 @@ if($password != $confirmPassword)
 
 if(count($errors) > 0) 
 {
-    $_SESSION['errors'] = $errors;
+    $_SESSION['errors-signUp'] = $errors;
     header('Location: '. BASE_URL . "/pages/sign-up.php");
 }
 else
@@ -55,7 +55,7 @@ else
     else
     {
         $errors['update'] = $conn->error;
-        $_SESSION['errors'] = $errors;
+        $_SESSION['errors-signUp'] = $errors;
         header('Location: '. BASE_URL . "/pages/sign-up.php");
     }
 }

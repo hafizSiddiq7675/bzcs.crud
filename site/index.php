@@ -1,4 +1,8 @@
 <?php require_once 'private/initialize.php';
+if(!isset($_SESSION['user_id']))
+{
+    echo '<pre>'; print_r("Unauthorized"); exit;
+}
 $user_id = $_SESSION['user_id'];
 $sql     = "SELECT * from users where id = " .$user_id;
 $result  = $conn->query($sql);

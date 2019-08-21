@@ -6,8 +6,8 @@
   <body class="text-center">
 
     <form class="form-signin" method="post" action="sign-up-action.php">
-    <?php if(isset($_SESSION['errors']))
-  foreach ($_SESSION['errors'] as $key => $value) {
+    <?php if(isset($_SESSION['errors-signUp']))
+  foreach ($_SESSION['errors-signUp'] as $key => $value) {
     echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
     <strong>PLEASE FIX!</strong> ' .$value.'
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">

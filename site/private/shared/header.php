@@ -12,4 +12,5 @@
 
     <!-- Custom styles for this template -->
     <link href="<?php echo BASE_URL ?>/_css/sticky-footer-navbar.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
   </head>

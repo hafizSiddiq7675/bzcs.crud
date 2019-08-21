@@ -1,5 +1,9 @@
 
-<?php require_once '../private/initialize.php'; 
+<?php require_once '../private/initialize.php';
+if(!isset($_SESSION['user_id']))
+{
+  echo '<pre>'; print_r("Unauthorized"); exit;
+}
 $user_id = $_SESSION['user_id'];
 $sql     = "SELECT * from users where id = " .$user_id;
 $result  = $conn->query($sql);
@@ -14,8 +18,8 @@ $result  = $conn->query($sql);
   <body class="text-center">
 
     <form class="form-signin" method="post" action="edit-profile-action.php">
-    <?php if(isset($_SESSION['errors']))
-  foreach ($_SESSION['errors'] as $key => $value) {
+    <?php if(isset($_SESSION['errors-editProfile']))
+  foreach ($_SESSION['errors-editProfile'] as $key => $value) {
     echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
     <strong>PLEASE FIX!</strong> ' .$value.'
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">

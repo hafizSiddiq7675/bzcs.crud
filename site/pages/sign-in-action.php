@@ -15,7 +15,7 @@ if(empty($password))
 
 if(count($errors) > 0) 
 {
-    $_SESSION['errors'] = $errors;
+    $_SESSION['errors-signIn'] = $errors;
     header('Location: '. BASE_URL . "/pages/sign-in.php");
 }
 else
@@ -34,7 +34,7 @@ else
     else
     {
         $errors['invalid'] = "Invalid Credential provided";
-        $_SESSION['errors'] = $errors;
+        $_SESSION['errors-signIn'] = $errors;
         header('Location: '. BASE_URL . "/pages/sign-in.php");
     }
 }
