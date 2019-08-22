@@ -73,7 +73,7 @@ if ($result->num_rows > 0) {
                     </div>
                 </div>
                 <div class="col-md-3">
-                <label for="coa_type">Select Chart of Account Tyoe</label>
+                <label for="coa_type">Select Chart of Account Type</label>
                         <select class="form-control" id="coa_type" name="coa_type">
                             <option value="capital">Capital</option>
                             <option value="assets">Assets</option>

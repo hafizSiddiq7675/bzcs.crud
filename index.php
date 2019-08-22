@@ -22,6 +22,8 @@ else
  * Simple finance solution for each user
  * Front end website
  * Management of Chart of accounts
+ * -(id,user_id,coa_name,coa_desc,coa_type,is_parent,parent_id)
+ * textbox => coa_name,coa_desc dropdown => type, parent
  * -Utilities Expense, 12,000 (Parent account) Account type = Assets, Liabilities, Revenue, Expense, Capital 
  * --Electricity bill,4000 (Child account) Expense
  * --Gas Bill,4000 (child Account)
