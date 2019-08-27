@@ -1,0 +1,2 @@
+CREATE TABLE `easy_finance_db`.`opening_balances` ( `id` INT NOT NULL AUTO_INCREMENT , `coa_id` INT NOT NULL , `ob_debit` DECIMAL NOT NULL , `ob_credit` DECIMAL NOT NULL , `ob_desc` VARCHAR(255) NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+ALTER TABLE opening_balances ADD FOREIGN KEY (coa_id) REFERENCES chart_of_accounts(id)
