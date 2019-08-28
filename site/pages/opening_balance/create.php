@@ -11,7 +11,7 @@ $result  = $conn->query($sql);
     {
       $user = $result->fetch_assoc();
     }
-$sql        = "SELECT * from chart_of_accounts WHERE user_id = " . $user_id . " AND is_parent = 0";
+$sql        = "SELECT chart_of_accounts.id, opening_balances.coa_id,chart_of_accounts.coa_name from chart_of_accounts LEFT JOIN opening_balances ON chart_of_accounts.id = opening_balances.coa_id WHERE chart_of_accounts.user_id = " . $user_id . " AND chart_of_accounts.is_parent = 0";
 $result     = $conn->query($sql);
 if ($result->num_rows > 0) {
     $coa = $result->fetch_all(MYSQLI_ASSOC);
@@ -50,10 +50,13 @@ if ($result->num_rows > 0) {
                     <div class="form-group">
                         <label for="coa_id">Select Chart of Account</label>
                         <select class="form-control" id="coa_id" name="coa_id">
-                            <?php if(isset($coa)) 
+                            <?php if(isset($coa))
+                                echo '<option value="0">Select Chart Of Account</option>';
                                 foreach ($coa as $key => $value) {
-                                    echo '<option id="' . $value['id'] . '" value="' . $value['id'] . '">' .
-                                            $value['coa_name'] . '</option>';
+                                    if($value['coa_id'] == '') {
+                                        echo '<option id="' . $value['id'] . '" value="' . $value['id'] . '">' .
+                                        $value['coa_name'] . '</option>';
+                                    }
                                 }
                             ?>
                         </select>
