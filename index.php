@@ -28,7 +28,13 @@ else
  * --Electricity bill,4000 (Child account) Expense
  * --Gas Bill,4000 (child Account)
  * --Water Bill,4000 (child account)
- * Management of Opening Balances
+ * Management of Opening Balance
+ * -id{pk},coa_id{FK},ob_debit [decimal],ob_credit[decimal],ob_desc[varchar] (Nullable)
+ * --dropdown [all chart of accounts based on user, and user can write opening balance only once for an account]
+ * ,textbox for debit, texbox for credit, textbox for desc
+ * Electricity expense 10,000 DR, 10,000CR
+ * --textbox for amount, textbox for desc, radio buttons for debit and credit
+ * --textbox for amount, texbox for desc two submit buttons for credit and debit
  * Management Of Vouchers
  * --Sep electricity bill 3000 -> Expense INC -> Asset -> Cash, Bank Account, DEC
  * -- INC Debit, DEC Credit Electricity Bill = Debit, Cash = Credit
